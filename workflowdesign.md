@@ -1,17 +1,9 @@
-```plaintext
-ENTRY
-  ↓
-[DispatchNode]
-  ↓
- ┌────────────────────────────┐
- │  Parallel: 6 Evaluators    │
- └────────┬───────────────────┘
-          ↓
-     [Praetor Node]
-          ↓
-    [HumanInterrupt Y/N?]
-      ↙           ↘
-    YES           NO
-     ↓             ↓
-(loop again)     [Output Final Results]
+```mermaid
+flowchart TD
+    A[ENTRY] --> B[DispatchNode]
+    B --> C[Parallel: 6 Evaluators]
+    C --> D[Praetor Node]
+    D --> E{HumanInterrupt Y/N?}
+    E -- YES --> F[Loop Again]
+    E -- NO --> G[Output Final Results]
 ```
